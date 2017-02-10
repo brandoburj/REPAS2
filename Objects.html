@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="PSPad editor, www.pspad.com">
+
+  <title>Objects</title>
+  
+  <style>
+  
+
+
+  </style>
+
+
+  </head>
+
+  <body>
+  
+  <h1>Objects</h1>
+
+
+  <p id="demo"></p>
+  <p id="demo2"></p>
+  <p id="demo3"></p>
+  <p id="demo4"></p>
+
+
+
+
+  <script>
+    var person = {
+      firstName: "Steven",
+      lastName: "Seagal",
+      age: 50,
+      eyeColor: "blue"    
+    };
+    document.getElementById("demo").innerHTML =
+    person.firstName + " " + person.lastName;
+
+    
+    function person2(first, last, age, eye){
+      this.firstName=first;
+      this.lastName=last;
+      this.age=age;
+      this.eye=eye;
+    };
+
+    var myFather = new person2("John", "Doe", 50, "blue");
+    var myMother = new person2("Sally", "Rally", 45, "green");
+
+    document.getElementById("demo2").innerHTML = 
+    "My father is "+myFather.age + " and my mother is "+ myMother.age;
+
+
+    var person3 = {
+      firstName: "Jaro",
+      lastName: "Filip",
+      id: 5566,
+      fullName: function(){
+        return this.firstName+" "+this.lastName;
+      }
+    };
+
+    document.getElementById("demo3").innerHTML = "cele meno je: "+person3.fullName(); 
+
+    var book1 = {
+      price: 10,
+      sold: 6,
+      income: function(){
+        return this.price*this.sold;
+      },
+      DPH: function(){
+        return this.income()*0.2;
+      }
+    };
+    document.getElementById("demo4").innerHTML = "Trzba z predaja knihy je: "+book1.income()+" a DPH z trzby je: "+book1.DPH();
+
+
+  </script>
+   	
+  </body>
+  </html>
+
