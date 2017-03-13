@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+ <head>
+  <meta charset="utf-8">  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <title>JSON</title>
+  <style>  
+  
+
+  </style>
+
+  </head>
+  <body>
+  <h1>JSON</h1>
+    
+    <div>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <br><br><br>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <br><br><br>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+
+
+
+    <button id="btn1">zobraz objekt</button>
+    <button id="btn2">alert pole</button>
+    <button id="btn3">vypis</button>
+
+    </div>
+    <div>
+
+    </div>   
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+
+    var tovar = {"ovocie":"hruska", "cena": 20, "trieda": 1};
+    var meno = tovar.ovocie;
+    var akost = tovar.trieda;
+    $("#demo").text(meno);
+    $("#demo2").text(akost);
+
+  $("#btn1").click(function(){
+    var myObj =  {"name":"John", "age":30, "car":"skoda"};
+
+    $.each(myObj, function(key, value){
+      $("#demo3").append(document.createTextNode(" "+key+": "+value));
+    });
+  });
+
+  $("#btn2").click(function(){  
+    $.each([52, 35, 125], function(index, value){
+      //alert(index+": "+value);
+      $("#demo4").append(document.createTextNode(" "+index+": "+value));
+    });
+  });
+
+  $("#btn3").click(function(){
+    $.each({name: "John", lang: "JS"}, function(k,v){
+      $("#demo5").append(document.createTextNode(" key: "+ k + " value: " + v));
+    });
+  });
+
+  });
+  </script> 
+
+   	
+</body>
+</html>
